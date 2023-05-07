@@ -2,14 +2,14 @@ extends Area2D
 
 var speed = Global.speed
 var sensor = 0
-var dist = position.y - 64
+var dist = position.y - 64*0.3
 
 func _process(delta):
 	#se mueve hacia arriba
 	position.y -= speed*delta
 	
 	#se fue D-:
-	if position.y < -50:
+	if position.y < -50*0.3:
 		queue_free()
 		Global.scr-=10
 		Global.combo=0

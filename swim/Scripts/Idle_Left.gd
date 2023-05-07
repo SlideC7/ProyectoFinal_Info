@@ -9,7 +9,7 @@ func _process(delta):
 	if(shape!=null && is_instance_valid(shape)):
 		#Invalid get index 'global_position' (on base: 'previously freed instance').
 		# :(
-		dist =  abs(get_last_shape_owner().global_position.y - 64)
+		dist =  abs(get_last_shape_owner().global_position.y - 64*0.3)
 		
 	#Sensor y puntaje good
 	if sensor==1 and Input.is_action_just_pressed("ui_left"):
@@ -17,26 +17,26 @@ func _process(delta):
 			#Global.scr+=10*Global.mult
 			#Global.combo+=1
 			#print('good! (down)')
-		if dist > 52:
+		if dist > 52*0.3:
 			$"/root/Global".grd = "MISS !!"
 			#$Grade/Label.text = "MISS !!"
 			#print(str(dist) + " miss!, flecha izq")
 			anim.play("Bad")
 			Global.scr-=10
 			Global.combo=0
-		elif 32 < dist && dist < 52:
+		elif 32*0.3 < dist && dist < 52*0.3:
 			$"/root/Global".grd = "GOOD !!"
 			#print(str(dist)+" good!, flecha abajo")
 			anim.play("Good")
 			Global.scr+=5*Global.mult
 			Global.combo+=1
-		elif 16 < dist && dist < 32:
+		elif 16*0.3 < dist && dist < 32*0.3:
 			$"/root/Global".grd = "GREAT !!"
 			#print(str(dist) + " grat!, flecha abajo")
 			anim.play("Good")
 			Global.scr+=10*Global.mult
 			Global.combo+=1
-		elif 0 < dist && dist < 16:
+		elif 0 < dist && dist < 16*0.3:
 			#print(str(dist) + " excelent!, flecha abajo")
 			anim.play("Good")
 			Global.scr+=15*Global.mult
