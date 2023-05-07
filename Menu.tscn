@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Menu/Menu.jpg" type="Texture" id=1]
+[ext_resource path="res://Menu/Menu.gd" type="Script" id=2]
+
+[node name="Menu" type="Node2D"]
+position = Vector2( 210, 119 )
+scale = Vector2( 1.00932, 1.00535 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -174.0 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -211.034, -124.334 )
+scale = Vector2( 0.54719, 0.529087 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -108.985
+margin_top = -63.6592
+margin_right = 13.0152
+margin_bottom = -1.65916
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Isla de" type="Label" parent="VBoxContainer"]
+margin_right = 132.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Isla de Campeones"
+uppercase = true
+
+[node name="Jugar" type="Button" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 132.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Jugar"
+flat = true
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+margin_top = 42.0
+margin_right = 132.0
+margin_bottom = 62.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Salir"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_Jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_Salir_pressed"]
