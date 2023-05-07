@@ -30,7 +30,7 @@ func _on_Timer_timeout():
 	counter+=1
 	
 	if counter>=75:
-		get_tree().change_scene("res://GameOver.tscn")
+		get_tree().change_scene("res://swim/GameOver.tscn")
 	
 	if counter<68:
 		match rand:

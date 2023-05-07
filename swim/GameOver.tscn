@@ -15,7 +15,8 @@ font_data = ExtResource( 1 )
 size = 32
 font_data = ExtResource( 2 )
 
-[node name="GameOver" type="CanvasLayer"]
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 0.308642, 0.300197 )
 script = ExtResource( 4 )
 
 [node name="BG" type="Sprite" parent="."]
@@ -45,6 +46,7 @@ margin_left = 220.0
 margin_top = 313.0
 margin_right = 806.0
 margin_bottom = 444.0
+rect_scale = Vector2( 1.00125, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "CALFICACION:
 :("
