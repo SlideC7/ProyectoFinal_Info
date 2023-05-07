@@ -14,9 +14,9 @@ func _on_Button_pressed():
 	Global.scr=0
 	Global.combo+=0
 	Global.grd="..."
-	get_tree().change_scene("res://Juego.tscn")
+	get_tree().change_scene("res://swim/Juego.tscn")
 
 func _on_Button2_pressed():
 	#                     cambiar por el overworld.
-	#get_tree().change_scene("res://Juego.tscn")
+	get_tree().change_scene("res://World.tscn")
 	pass

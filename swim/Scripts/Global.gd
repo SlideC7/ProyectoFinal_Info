@@ -14,7 +14,7 @@ func _process(delta):
 		25:
 			mult=2
 
-var speed = 220
+var speed = 110
 
 #sensor
 var sensor_AL = 0
