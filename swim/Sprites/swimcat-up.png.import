@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/swimcat-up.png-df0e372918f616fb3c9630bf88b5aed8.image"
+
+[deps]
+
+source_file="res://swim/Sprites/swimcat-up.png"
+dest_files=[ "res://.import/swimcat-up.png-df0e372918f616fb3c9630bf88b5aed8.image" ]
+
+[params]
+

@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://swim/Aexkon-Font/AEXKON_Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://swim/Aexkon-Font/AEXKON_Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://swim/swim-sprite.png" type="Texture" id=3]
+[ext_resource path="res://swim/Scripts/GameOver.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="BG" type="Sprite" parent="."]
+position = Vector2( 512.267, 301.7 )
+scale = Vector2( 3.19833, 3.31444 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 180 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 424, 64 )
+
+[node name="Titulo2" type="Label" parent="Node2D"]
+margin_left = -37.0
+margin_top = 177.0
+margin_right = 219.0
+margin_bottom = 241.0
+custom_fonts/font = SubResource( 1 )
+text = "000"
+align = 1
+valign = 2
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Titulo3" type="Label" parent="Node2D2"]
+margin_left = 220.0
+margin_top = 313.0
+margin_right = 806.0
+margin_bottom = 444.0
+custom_fonts/font = SubResource( 1 )
+text = "CALFICACION:
+:("
+align = 1
+valign = 2
+
+[node name="Titulo" type="Label" parent="."]
+margin_left = 424.0
+margin_top = 64.0
+margin_right = 680.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 1 )
+text = "FIN !!"
+align = 1
+valign = 2
+
+[node name="Titulo4" type="Label" parent="."]
+margin_left = 182.0
+margin_top = 155.0
+margin_right = 885.0
+margin_bottom = 219.0
+custom_fonts/font = SubResource( 1 )
+text = "PUNTAJE FINAL"
+align = 1
+valign = 2
+
+[node name="Button" type="Button" parent="."]
+margin_left = 368.0
+margin_top = 459.0
+margin_right = 665.0
+margin_bottom = 497.0
+custom_fonts/font = SubResource( 2 )
+text = "REINTENTAR"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 365.0
+margin_top = 515.0
+margin_right = 662.0
+margin_bottom = 553.0
+custom_fonts/font = SubResource( 2 )
+text = "SALIR"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/climbing.mp3-11a981507c74bcfb8bd42616bd2b73ef.mp3str"
+
+[deps]
+
+source_file="res://swim/climbing.mp3"
+dest_files=[ "res://.import/climbing.mp3-11a981507c74bcfb8bd42616bd2b73ef.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

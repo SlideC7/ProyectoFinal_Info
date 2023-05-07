@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/otohime-up.png-caa7f8241ee1ac5148b8d0bad520a284.image"
+
+[deps]
+
+source_file="res://swim/Sprites/otohime-up.png"
+dest_files=[ "res://.import/otohime-up.png-caa7f8241ee1ac5148b8d0bad520a284.image" ]
+
+[params]
+
