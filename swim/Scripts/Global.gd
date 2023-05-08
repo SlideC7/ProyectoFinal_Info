@@ -21,3 +21,6 @@ var sensor_AL = 0
 var sensor_AD = 0
 var sensor_AU = 0
 var sensor_AR = 0
+
+var final_score = 0
+

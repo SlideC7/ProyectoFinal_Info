@@ -2,37 +2,29 @@
 
 [ext_resource path="res://swim/Aexkon-Font/AEXKON_Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://swim/Aexkon-Font/AEXKON_Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://swim/Scripts/GameOver.gd" type="Script" id=4]
 
-[sub_resource type="GDScript" id=3]
-script/source = "extends Node2D
+[sub_resource type="StreamTexture" id=1]
+flags = 6
+load_path = "res://.import/GrassBackground.png-5c628e31d34eed4c6e6813e474a4e7f6.stex"
 
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
 
-func _ready():
-	$Node2D/Titulo2.text = str(Global.scr)
-	if int(Global.scr) < 1000:
-		$Node2D2/Titulo3.text = \"CALIFICACION: \\n OK !\"
-	elif 1000 < int(Global.scr) && int(Global.scr) < 1900:
-		$Node2D2/Titulo3.text = \"CALIFICACION: \\n BIEN !!\"
-	elif 1900 < int(Global.scr):
-		$Node2D2/Titulo3.text = \"CALIFICACION: \\n EXCELENTE !!!\"
+[sub_resource type="DynamicFont" id=3]
+size = 64
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
 
-
-func _on_Button_pressed():
-	Global.scr=0
-	Global.combo+=0
-	Global.grd=\"...\"
-	get_tree().change_scene(\"res://swim/Juego.tscn\")
-
-
-func _on_Button2_pressed():
-	Global.scr=0
-	Global.combo+=0
-	Global.grd=\"...\"
-	get_tree().change_scene(\"res://World.tscn\")
-"
-
-[sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/swim-sprite.png-d766feb3b8acff55a376da87c6fc0bc5.stex"
+[sub_resource type="DynamicFont" id=4]
+size = 64
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 64
@@ -41,39 +33,21 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 64
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 64
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=8]
-size = 64
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=9]
 size = 32
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=7]
 size = 32
 font_data = ExtResource( 2 )
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2( 0.308642, 0.300197 )
-script = SubResource( 3 )
+script = ExtResource( 4 )
 
 [node name="BG" type="Sprite" parent="."]
-position = Vector2( 512.267, 301.7 )
-scale = Vector2( 3.19833, 3.31444 )
-texture = SubResource( 4 )
+position = Vector2( 518.494, 305.552 )
+scale = Vector2( 3.25967, 3.41532 )
+texture = SubResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 320, 180 )
 
@@ -85,7 +59,7 @@ margin_left = -37.0
 margin_top = 177.0
 margin_right = 219.0
 margin_bottom = 241.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 text = "000"
 align = 1
 valign = 2
@@ -98,7 +72,7 @@ margin_top = 313.0
 margin_right = 806.0
 margin_bottom = 444.0
 rect_scale = Vector2( 1.00125, 1 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 text = "CALFICACION:
 :("
 align = 1
@@ -109,7 +83,7 @@ margin_left = 424.0
 margin_top = 64.0
 margin_right = 680.0
 margin_bottom = 128.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 4 )
 text = "FIN !!"
 align = 1
 valign = 2
@@ -119,7 +93,7 @@ margin_left = 182.0
 margin_top = 155.0
 margin_right = 885.0
 margin_bottom = 219.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 5 )
 text = "PUNTAJE FINAL"
 align = 1
 valign = 2
@@ -129,16 +103,18 @@ margin_left = 368.0
 margin_top = 459.0
 margin_right = 665.0
 margin_bottom = 497.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 6 )
 text = "REINTENTAR"
+flat = true
 
 [node name="Button2" type="Button" parent="."]
 margin_left = 365.0
 margin_top = 515.0
 margin_right = 662.0
 margin_bottom = 553.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 7 )
 text = "SALIR"
+flat = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

@@ -2,24 +2,20 @@ extends Node2D
 
 
 func _ready():
-	$Node2D/Titulo2.text = str(Global.scr)
-	if int(Global.scr) < 1000:
+	$Node2D/Titulo2.text = str(Global.final_score)
+	if int(Global.final_score) < 1000:
 		$Node2D2/Titulo3.text = "CALIFICACION: \n OK !"
-	elif 1000 < int(Global.scr) && int(Global.scr) < 1900:
+	elif 1000 < int(Global.final_score) && int(Global.final_score) < 1900:
 		$Node2D2/Titulo3.text = "CALIFICACION: \n BIEN !!"
-	elif 1900 < int(Global.scr):
+	elif 1900 < int(Global.final_score):
 		$Node2D2/Titulo3.text = "CALIFICACION: \n EXCELENTE !!!"
 
 
 func _on_Button_pressed():
-	Global.scr=0
-	Global.combo+=0
-	Global.grd="..."
-	get_tree().change_scene("res://swim/Juego.tscn")
+	Global.final_score=0
+	get_tree().change_scene("res://ArcheryGame.tscn")
 
 
 func _on_Button2_pressed():
-	Global.scr=0
-	Global.combo+=0
-	Global.grd="..."
+	Global.final_score=0
 	get_tree().change_scene("res://World.tscn")

@@ -4,12 +4,8 @@
 [ext_resource path="res://PlayerArchery2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://MainScene/GrassBackground.png" type="Texture" id=3]
 [ext_resource path="res://EnemySpawner.tscn" type="PackedScene" id=4]
-
-[sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0, 0, 50, 0, 50, 50, 0, 50 )
-
-[sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 0, 0, 50, 0, 50, 50, 0, 50 )
+[ext_resource path="res://ArcheryGame.gd" type="Script" id=5]
+[ext_resource path="res://archery.mp3" type="AudioStream" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 49, 0, 49, 50, 0, 50 )
@@ -39,16 +35,9 @@ points = PoolVector2Array( 0, 0, 49, 0, 49, 50, 0, 50 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 1 )
 1/shape_one_way = false
-1/shape_one_way_margin = 1.0
-1/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
 1/z_index = 0
 2/name = "archery-sprite.png 2"
 2/texture = ExtResource( 1 )
@@ -60,16 +49,9 @@ points = PoolVector2Array( 0, 0, 49, 0, 49, 50, 0, 50 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 2 )
 2/shape_one_way = false
-2/shape_one_way_margin = 1.0
-2/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
 2/z_index = 0
 3/name = "archery-sprite.png 3"
 3/texture = ExtResource( 1 )
@@ -109,6 +91,7 @@ points = PoolVector2Array( 0, 0, 49, 0, 49, 50, 0, 50 )
 
 [node name="ArcheryGame" type="Node2D"]
 position = Vector2( -5, 0 )
+script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 168, 99.5 )
@@ -122,10 +105,27 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -1, 3, 0, -65535, 3, 0, -65533, 3, 0, -65531, 3, 0, -65529, 3, 0, -65527, 3, 0, -65525, 3, 0, -65523, 3, 0, -65521, 3, 0, -65519, 3, 0, -65517, 3, 0, 196607, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131089, 1, 0, 131090, 1, 0, 131092, 1, 0, 262143, 1, 0, 196609, 1, 0, 196610, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196625, 1, 0, 196626, 1, 0, 196628, 1, 0, 327679, 1, 0, 262145, 1, 0, 262146, 1, 0, 262149, 1, 0, 262150, 1, 0, 262151, 1, 0, 262154, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262162, 1, 0, 262164, 1, 0, 393215, 1, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327685, 1, 0, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327691, 1, 0, 327693, 1, 0, 327694, 1, 0, 327695, 1, 0, 327696, 1, 0, 327697, 1, 0, 327698, 1, 0, 327700, 1, 0, 458750, 1, 0, 589822, 1, 0, 524288, 4, 0, 524290, 4, 0, 524292, 4, 0, 524294, 4, 0, 524296, 4, 0, 524298, 4, 0, 524300, 4, 0, 524302, 4, 0, 524304, 4, 0, 524306, 4, 0, 524308, 1, 0, 655360, 4, 0, 655362, 4, 0, 655364, 4, 0, 655366, 4, 0, 655368, 4, 0, 655370, 4, 0, 655372, 4, 0, 655374, 4, 0, 655376, 4, 0, 655378, 4, 0, 655380, 1, 0, 786430, 1, 0 )
 
-[node name="YSort" type="YSort" parent="."]
-
-[node name="EnemySpawner" parent="YSort" instance=ExtResource( 4 )]
+[node name="EnemySpawner" parent="." instance=ExtResource( 4 )]
 position = Vector2( 5, 0 )
 
-[node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 5, 0 )
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9, 5 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="Score" type="Label" parent="."]
+margin_left = 138.0
+margin_top = 2.0
+margin_right = 178.0
+margin_bottom = 16.0
+text = "SCORE: 0"
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="add_score" from="EnemySpawner" to="." method="score"]
+[connection signal="spawn_arrow" from="Player" to="." method="_on_Player_spawn_arrow"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]
